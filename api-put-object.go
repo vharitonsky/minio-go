@@ -279,6 +279,7 @@ func (c Client) putObjectDo(bucketName, objectName string, reader io.Reader, md5
 	// Set headers.
 	customHeader := make(http.Header)
 	customHeader.Set("Content-Type", contentType)
+    customHeader.Set("Content-Type", "x-amz-acl: public-read")
 
 	// Populate request metadata.
 	reqMetadata := requestMetadata{
